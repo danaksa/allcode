@@ -1,6 +1,5 @@
 Список каталогов:
--reservation
--PHP код
+-PHP bitrix, wordpress
 -JS, CSS - примеры кода
--Laravel- учебные
+-Laravel- гостевая книга на laravel8
 -testclosest - поиск ближайшего в массиве, PHP&JS
