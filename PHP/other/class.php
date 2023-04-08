@@ -1,5 +1,5 @@
 <?php
-namespace \Ims\Components;
+namespace Ims\Components;
 
 use Bitrix\Crm\DealTable;
 use Bitrix\Main\Entity;
