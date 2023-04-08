@@ -1,5 +1,5 @@
 <?php
-namespace Nota\Ims\Components;
+namespace \Ims\Components;
 
 use Bitrix\Crm\DealTable;
 use Bitrix\Main\Entity;
@@ -12,11 +12,11 @@ use Bitrix\Tasks\Internals\Task\LogTable;
 use Bitrix\Main\Engine\Contract\Controllerable;
 use CSite;
 use CUser;
-use Nota\Ims\Helpers\EmploymentLog;
-use Nota\Ims\Helpers\Incident\IncidentChatHelper;
-use Nota\Ims\Helpers\Incident\IncidentPermissionsHelper;
-use Nota\Ims\Helpers\Incident\Task\IncidentTaskHelper;
-use Nota\Ims\Helpers\Unloading\UnloadingIncidentChatDataHelper;
+use Ims\Helpers\EmploymentLog;
+use Ims\Helpers\Incident\IncidentChatHelper;
+use Ims\Helpers\Incident\IncidentPermissionsHelper;
+use Ims\Helpers\Incident\Task\IncidentTaskHelper;
+use Ims\Helpers\Unloading\UnloadingIncidentChatDataHelper;
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
@@ -160,8 +160,8 @@ class ActivityComponent extends \CBitrixComponent
      */
     private function checkAccess(): bool
     {
-        $roles = \Nota\Ims\Helpers\Incident\IncidentUserRolesHelper::getRoles($this->arParams['INCIDENT_ID'],CUser::GetID());
-        $access = \Nota\Ims\Helpers\Incident\IncidentPermissionsHelper::checkReadPermissions($this->arParams['INCIDENT_ID'],CUser::GetID());
+        $roles = Ims\Helpers\Incident\IncidentUserRolesHelper::getRoles($this->arParams['INCIDENT_ID'],CUser::GetID());
+        $access = Ims\Helpers\Incident\IncidentPermissionsHelper::checkReadPermissions($this->arParams['INCIDENT_ID'],CUser::GetID());
         $baseroles = ['owner','duty_officers', 'OPERATIVE_EMPLOYE','approving', 'RECONCILING'];
 
         if (!empty(array_intersect($baseroles, $roles))) {
@@ -369,7 +369,7 @@ class ActivityComponent extends \CBitrixComponent
                 $rowArray[] = $header;
             }
 
-            $sheet2->setCellValue('A1', 'Сведения об активности пользователей IMS (Инцидент № '.$incident['UF_SERIAL_NUMBER'].' - '.$incident['UF_SHORT_NAME'].')');
+            $sheet2->setCellValue('A1', 'Сведения об активности пользователей (Инцидент № '.$incident['UF_SERIAL_NUMBER'].' - '.$incident['UF_SHORT_NAME'].')');
             $sheet2->getStyle('A1:E1')->applyFromArray([
                 'font' => [
                     'name' => 'Calibri',
@@ -636,7 +636,7 @@ class ActivityComponent extends \CBitrixComponent
                     }
                     $this->arResult['ACTIVITIES'][$key]['userFio'] = trim($this->arResult['ACTIVITIES'][$key]['userFio']);
 
-                    $this->arResult['ACTIVITIES'][$key]['oiv'] = \Nota\Ims\Service\UserService::getUserDepartment($activity['userId']);
+                    $this->arResult['ACTIVITIES'][$key]['oiv'] = Nota\Ims\Service\UserService::getUserDepartment($activity['userId']);
                 }
             }
         }
