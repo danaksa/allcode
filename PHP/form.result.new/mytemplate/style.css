@@ -1,0 +1,109 @@
+table.form-table
+{
+	width:100%;
+	background-color:white;
+	border-collapse:collapse;
+	font-size:100%;
+	font-weight:normal;
+	line-height:160%;
+}
+
+.title{
+	font-weight: bold;
+ 	font-size: 16px;
+}
+
+
+
+table.form-table th, table.form-table td
+{
+	border:1px solid #ADC3D5;
+	padding: 5px 5px;
+	vertical-align:top;
+}
+
+.labelblock.app{
+	color: red;
+  	text-align: center;
+  	font-weight: bold;
+}
+
+.small{
+	font-size: 12px !important;
+  	font-weight: 400 !important;
+}
+
+.form-group .labelblock{
+	font-weight: bold;
+  	font-size: 16px;
+}
+
+.row.block .inputtext{
+	max-width: 140px;
+}
+
+select{
+	width: 132px;
+}
+
+.but{
+	padding-top: 15px;
+}
+
+.but button{
+width: 39.1px;
+}
+
+#workarea{
+	width: 863px !important;
+}
+
+table.form-table th
+{
+	background-image:url(images/table_head.gif);
+	background-repeat:repeat-x;
+	text-align: left;
+	color:#25639A;
+}
+
+
+table.form-table td
+{
+	padding: 15px 5px;
+}
+
+.form-required 
+{
+	color: red;
+}
+
+@media (max-width: 575px){
+  .labelblock.app{
+  	text-align: left;
+  }
+}
+
+@media (max-width: 991px){
+  select{
+    width: 111px;
+  }
+  
+  .row.block .inputtext{
+  	width: 112px;
+  }
+}
+
+
+
+.labelblock{
+	display: block;
+}
+
+.error-fld {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-image: url(images/icon_warn.gif);
+}
