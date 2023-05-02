@@ -1,6 +1,6 @@
 <?php
 
-namespace JpMotor\Basket;
+namespace Jp\Basket;
 
 use CSaleBasket;
 use CSaleUser;
