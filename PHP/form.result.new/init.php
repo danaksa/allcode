@@ -10,24 +10,6 @@ function FunctionName(params)
 */
 
 
-//require_once($_SERVER["DOCUMENT_ROOT"] . "/local/lib/dompdf/autoload.inc.php");
-
-/*
-AddEventHandler("main", "OnBeforeEventAdd", array("MailEventHandler","onBeforeEventAddHandler"));
-class MailEventHandler
-{
-
-    static function onBeforeEventAddHandler(&$event, &$lid, &$arFields, &$message_id, &$files)
-    {
-
-        
-        $filePath = $_SERVER['DOCUMENT_ROOT'] . "/log/123.txt";
-        file_put_contents($filePath, serialize($arFields), FILE_APPEND | LOCK_EX);
-            if ($event === 'FORM_FILLING_SIMPLE_FORM_1' && $message_id === '32') {}
-                
-            
-    }
-}*/
 
 AddEventHandler("main", "OnBeforeEventAdd", array("MyClass", "OnBeforeEventAddHandler"));
 class MyClass
